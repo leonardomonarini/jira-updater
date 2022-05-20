@@ -1,5 +1,5 @@
-name: Jira Issue Transition
-description: Change status of specific Jira issue
+name: Jira Updater
+description: Update fields of a specific JIRA Issue
 branding:
   icon: 'chevron-right'
   color: 'blue'
@@ -7,12 +7,9 @@ inputs:
   issue:
     description: Key of the issue to be transitioned
     required: true
-  transition:
-    description: The transition to apply to the issue, e.g. 'In Progress'
-    required: false
-  transitionId:
-    description: The id of a transition to apply to the issue
-    required: false
+  fixVersions:
+    description: Version to update the JIRA fixVersions field
+    required: true
 runs:
   using: 'node12'
   main: './dist/index.js'
