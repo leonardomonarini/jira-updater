@@ -31,6 +31,15 @@ class Jira {
     }
   }
 
+  async updateIssueFixVersions (issueId, version) {
+    return this.fetch('updateIssueFixVersions', {
+      pathname: `/rest/api/3/issue/${issueId}`,
+    }, {
+      method: 'PUT',
+      body: {"update": {"fixVersions":[{"set":[{"name":version}]}]}}
+    })
+  }
+
   async getIssueTransitions (issueId) {
     return this.fetch('getIssueTransitions', {
       pathname: `/rest/api/2/issue/${issueId}/transitions`,
