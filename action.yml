@@ -7,7 +7,7 @@ inputs:
   issue:
     description: Key of the issue to be transitioned
     required: true
-  fixVersions:
+  reporter:
     description: Version to update the JIRA fixVersions field
     required: true
 runs:
