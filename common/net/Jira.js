@@ -31,12 +31,14 @@ class Jira {
     }
   }
 
-  async updateIssueFixVersions (issueId, version) {
+  async updateIssueFix
+  
+  s (issueId, version) {
     return this.fetch('updateIssueFixVersions', {
       pathname: `/rest/api/3/issue/${issueId}`,
     }, {
       method: 'PUT',
-      body: {"update": {"fixVersions":[{"set":[{"name":version}]}]}}
+      body: {"fields": {"reporter":[{"set":[{"name":version}]}]}}
     })
   }
 
